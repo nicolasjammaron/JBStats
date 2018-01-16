@@ -128,14 +128,14 @@ namespace RegArchLib {
 	{	return 1 ;
 	}
 
+	
 	uint cConst::GetNLags(void) const
-	{
-		// A completer
+	{	return 0 ;
 	}
 
 	void cConst::ComputeGrad(uint theDate, const cRegArchValue& theValue, cRegArchGradient& theGradData, uint theBegIndex, cAbstResiduals* theResids)
 	{
-		// A completer
+		theGradData.mCurrentGradMu[theBegIndex] += 1.0 ;
 	}
 
 	void cConst::RegArchParamToVector(cDVector& theDestVect, uint theIndex)

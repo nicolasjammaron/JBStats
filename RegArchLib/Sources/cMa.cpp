@@ -151,13 +151,19 @@ namespace RegArchLib {
 	}
 	uint cMa::GetNLags(void) const
 	{
-		// A completer
+		return mvMa.GetSize() ;
 	}
 
 	void cMa::ComputeGrad(uint theDate, const cRegArchValue& theValue, cRegArchGradient& theGradData, uint theBegIndex, cAbstResiduals* theResids)
 	{
-		// A completer
+	uint myq = mvMa.GetSize() ;
+	register uint i ;
+		for (i = 1 ; i <= MIN(myq, theDate) ; i++)
+			theGradData.mCurrentGradMu[theBegIndex+i-1] += theValue.mUt[theDate - i] ;
+		for (i = 0 ; i < MIN(myq, theDate) ; i++)
+			theGradData.mCurrentGradMu -=  mvMa[i] * theGradData.mGradMt[i] ;
 	}
+
 
 	void cMa::RegArchParamToVector(cDVector& theDestVect, uint theIndex)
 	{

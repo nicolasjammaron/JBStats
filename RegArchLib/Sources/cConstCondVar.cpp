@@ -136,12 +136,12 @@ namespace RegArchLib {
 	}
 	uint cConstCondVar::GetNLags(void) const
 	{
-		// A completer
+		return 0 ;
 	}
 
-	void cConstCondVar::ComputeGrad(uint theDate, const cRegArchValue& theData, cRegArchGradient& theGradData, uint theBegIndex, cAbstResiduals* theResiduals)
+	void cConstCondVar::ComputeGrad(uint theDate, const cRegArchValue& theValue, cRegArchGradient& theGradData, cAbstResiduals* theResids)
 	{
-		// A completer
+		theGradData.mCurrentGradVar[theGradData.GetNMeanParam()] = 1.0 ;
 	}
 
 	void cConstCondVar::RegArchParamToVector(cDVector& theDestVect, uint theIndex)

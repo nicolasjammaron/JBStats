@@ -166,12 +166,20 @@ namespace RegArchLib {
 
 	uint cArch::GetNLags(void) const
 	{
-		// A completer
+		return mvArch.GetSize() ;
 	}
 
-	void cArch::ComputeGrad(uint theDate, const cRegArchValue& theData, cRegArchGradient& theGradData, uint theBegIndex, cAbstResiduals* theResiduals)
+	void cArch::ComputeGrad(uint theDate, const cRegArchValue& theValue, cRegArchGradient& theGradData, cAbstResiduals* theResiduals)
 	{
-		// A completer	
+	uint myp = mvArch.GetSize() ;
+		theGradData.mCurrentGradVar = 0.0L ;
+	uint myBegIndex = theGradData.GetNMeanParam() ;
+		theGradData.mCurrentGradVar[myBegIndex] = 1.0 ;
+	register uint i ;
+		for (i = 1 ; i <= MIN(myp, theDate) ; i++)
+			theGradData.mCurrentGradVar[myBegIndex+i] = theValue.mUt[theDate - i]*theValue.mUt[theDate - i] ;
+		for (i = 1 ; i <= MIN(myp, theDate) ; i++)
+			theGradData.mCurrentGradVar -= 2.0 * mvArch[i-1] * theValue.mUt[theDate - i] * theGradData.mGradMt[i-1] ;
 	}
 
 	void cArch::RegArchParamToVector(cDVector& theDestVect, uint theIndex)

@@ -205,12 +205,20 @@ namespace RegArchLib {
 
 	uint cCondMean::GetNLags(void) const
 	{
-		// A completer
+	uint myNLags = 0 ;
+		for (register uint i = 0 ; i < GetNMean() ; i++)
+			myNLags = MAX(myNLags, mvCondMean[i]->GetNLags());
+		return myNLags ;
 	}
 
 	void cCondMean::ComputeGrad(uint theDate, const cRegArchValue& theValue, cRegArchGradient& theGradData, cAbstResiduals* theResids)
 	{
-		// A completer
+	uint myIndex = 0 ;
+		theGradData.mCurrentGradMu = 0.0L ;
+		for (register uint i = 0 ; i < GetNMean() ; i++)
+		{	mvCondMean[i]->ComputeGrad(theDate, theValue, theGradData, myIndex, theResids) ;
+			myIndex += mvCondMean[i]->GetNParam() ;
+		}
 	}
 
 

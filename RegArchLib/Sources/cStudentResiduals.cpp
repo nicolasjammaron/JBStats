@@ -65,9 +65,15 @@ namespace RegArchLib {
 	 * \param uint theNSample: the sample size
 	 * \param cDVector& theEpst: the output vector
 	 */
-	void cStudentResiduals::Generate(uint theNSample, cDVector& theEpst) const
+	void cStudentResiduals::Generate(const uint theNSample, cDVector& theYt) const
 	{
-		// A completer
+		theYt.ReAlloc(theNSample) ;
+		if (mDistrParameter[0] <= 2.0)
+			throw cError("wrong d.o.f.") ;
+
+	double myStd = sqrt(mDistrParameter[0]/(mDistrParameter[0]-2.0)) ;
+		for (register uint t = 0 ; t < theNSample ; t++)
+			theYt[t] = gsl_ran_tdist(mtR, mDistrParameter[0])/myStd ;
 	}
 
 	/*!

@@ -183,15 +183,29 @@ namespace RegArchLib {
 		return mvGarch.GetSize() ;
 	}
 
-
-	uint cGarch::GetNLags(void) const
+uint cGarch::GetNLags(void) const
 	{
-		// A completer
+		return  MAX(mvArch.GetSize(), mvGarch.GetSize()) ;
 	}
 
-	void cGarch::ComputeGrad(uint theDate, const cRegArchValue& theData, cRegArchGradient& theGradData, uint theBegIndex, cAbstResiduals* theResiduals)
+	void cGarch::ComputeGrad(uint theDate, const cRegArchValue& theValue, cRegArchGradient& theGradData, cAbstResiduals* theResiduals)
 	{
-		// A completer
+	uint myp = mvArch.GetSize(),
+		myq = mvGarch.GetSize(),
+		myBegIndex = theGradData.GetNMeanParam() ;
+	register uint i, j ;
+		theGradData.mCurrentGradVar = 0.0L ;
+		theGradData.mCurrentGradVar[myBegIndex] = 1.0 ;
+	//ARCH
+		for (i = 1 ; i <=  MIN(myp, theDate) ; i++)
+			theGradData.mCurrentGradVar[myBegIndex+i] = theValue.mUt[theDate-i]*theValue.mUt[theDate-i] ;
+		for (i = 1 ; i <= MIN(myp, theDate) ; i++)
+			theGradData.mCurrentGradVar -= 2.0 * mvArch[i-1] * theValue.mUt[theDate-i] * theGradData.mGradMt[i-1] ;
+	//GARCH
+		for (j = 1; j <= MIN(myq, theDate); j++)
+			theGradData.mCurrentGradVar[myBegIndex + myp + j] += theValue.mHt[theDate - j];
+		for (j = 1; j <= MIN(myq, theDate); j++)
+			theGradData.mCurrentGradVar += mvGarch[j-1] * theGradData.mGradHt[j-1] ;
 	}
 
 	void cGarch::RegArchParamToVector(cDVector& theDestVect, uint theIndex)
