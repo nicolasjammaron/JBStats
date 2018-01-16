@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurationDescriptor version="97">
+  <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
+    <logicalFolder name="HeaderFiles"
+                   displayName="Header Files"
+                   projectFiles="true">
+      <logicalFolder name="Headers" displayName="Headers" projectFiles="true">
+        <itemPath>Headers/cAR.h</itemPath>
+        <itemPath>Headers/cAbstCondMean.h</itemPath>
+        <itemPath>Headers/cAbstCondVar.h</itemPath>
+        <itemPath>Headers/cAbstResiduals.h</itemPath>
+        <itemPath>Headers/cArch.h</itemPath>
+        <itemPath>Headers/cCondMean.h</itemPath>
+        <itemPath>Headers/cCondVar.h</itemPath>
+        <itemPath>Headers/cConst.h</itemPath>
+        <itemPath>Headers/cGarch.h</itemPath>
+        <itemPath>Headers/cMA.h</itemPath>
+        <itemPath>Headers/cNormResiduals.h</itemPath>
+        <itemPath>Headers/cRegArchModel.h</itemPath>
+        <itemPath>Headers/cRegArchValue.h</itemPath>
+        <itemPath>Headers/cStudentResiduals.h</itemPath>
+      </logicalFolder>
+    </logicalFolder>
+    <logicalFolder name="ResourceFiles"
+                   displayName="Resource Files"
+                   projectFiles="true">
+    </logicalFolder>
+    <logicalFolder name="SourceFiles"
+                   displayName="Source Files"
+                   projectFiles="true">
+      <logicalFolder name="Sources" displayName="Sources" projectFiles="true">
+        <itemPath>Sources/cAR.cpp</itemPath>
+        <itemPath>Sources/cCondMean.cpp</itemPath>
+        <itemPath>Sources/cCondVar.cpp</itemPath>
+        <itemPath>Sources/cConst.cpp</itemPath>
+        <itemPath>Sources/cMA.cpp</itemPath>
+        <itemPath>Sources/cNormResiduals.cpp</itemPath>
+        <itemPath>Sources/cStudentResiduals.cpp</itemPath>
+      </logicalFolder>
+    </logicalFolder>
+    <logicalFolder name="TestFiles"
+                   displayName="Test Files"
+                   projectFiles="false"
+                   kind="TEST_LOGICAL_FOLDER">
+    </logicalFolder>
+    <logicalFolder name="ExternalFiles"
+                   displayName="Important Files"
+                   projectFiles="false"
+                   kind="IMPORTANT_FILES_FOLDER">
+      <itemPath>Makefile</itemPath>
+    </logicalFolder>
+  </logicalFolder>
+  <sourceRootList>
+    <Elem>.</Elem>
+  </sourceRootList>
+  <projectmakefile>Makefile</projectmakefile>
+  <confs>
+    <conf name="Debug" type="3">
+      <toolsSet>
+        <compilerSet>default</compilerSet>
+        <dependencyChecking>true</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <compileType>
+        <ccTool>
+          <incDir>
+            <pElem>Headers</pElem>
+            <pElem>../Error/Headers</pElem>
+            <pElem>../VectorAndMatrix/Headers</pElem>
+          </incDir>
+        </ccTool>
+        <archiverTool>
+        </archiverTool>
+      </compileType>
+      <item path="Headers/cAR.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Headers/cAbstCondMean.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Headers/cAbstCondVar.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Headers/cAbstResiduals.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Headers/cArch.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Headers/cCondMean.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Headers/cCondVar.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Headers/cConst.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Headers/cGarch.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Headers/cMA.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Headers/cNormResiduals.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Headers/cRegArchModel.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Headers/cRegArchValue.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Headers/cStudentResiduals.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Sources/cAR.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Sources/cCondMean.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Sources/cCondVar.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Sources/cConst.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Sources/cMA.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Sources/cNormResiduals.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Sources/cStudentResiduals.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+    </conf>
+    <conf name="Release" type="3">
+      <toolsSet>
+        <compilerSet>default</compilerSet>
+        <dependencyChecking>true</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <compileType>
+        <cTool>
+          <developmentMode>5</developmentMode>
+        </cTool>
+        <ccTool>
+          <developmentMode>5</developmentMode>
+        </ccTool>
+        <fortranCompilerTool>
+          <developmentMode>5</developmentMode>
+        </fortranCompilerTool>
+        <asmTool>
+          <developmentMode>5</developmentMode>
+        </asmTool>
+        <archiverTool>
+        </archiverTool>
+      </compileType>
+      <item path="Headers/cAR.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Headers/cAbstCondMean.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Headers/cAbstCondVar.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Headers/cAbstResiduals.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Headers/cArch.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Headers/cCondMean.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Headers/cCondVar.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Headers/cConst.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Headers/cGarch.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Headers/cMA.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Headers/cNormResiduals.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Headers/cRegArchModel.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Headers/cRegArchValue.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Headers/cStudentResiduals.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Sources/cAR.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Sources/cCondMean.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Sources/cCondVar.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Sources/cConst.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Sources/cMA.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Sources/cNormResiduals.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Sources/cStudentResiduals.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+    </conf>
+  </confs>
+</configurationDescriptor>
